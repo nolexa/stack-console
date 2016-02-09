@@ -7,7 +7,7 @@
  lazy - Defer polling until the first subscription to 'new'. Default is true. You can use consumer.update()to trigger a single update.
  */
 
-localStorage.so_tags = "";
+//localStorage.so_tags = "";
 
 window.jQuery = $ = require("jquery");
 
