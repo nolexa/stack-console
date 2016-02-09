@@ -1,0 +1,24 @@
+#tags_panel {
+    overflow: hidden
+}
+
+#tags_label {
+    float: left;
+    line-height: 34px;
+    margin-right: 4px
+}
+
+#tags_container {
+    overflow: hidden;
+    vertical-align: middle
+}
+
+#tags_text {
+    display: inherit;
+    border: none;
+    box-shadow: none
+}
+
+#jumbotron {
+    text-align: center
+}

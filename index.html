@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>stack-console</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="main.css" rel="stylesheet">
+    <script src="main.js"></script>
+    <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <div id="tags_panel">
+        <label id="tags_label" for="tags_input">Tags:</label>
+
+        <div id="tags_container">
+            <input id="tags_input" type="text" class="form-control" placeholder="Type comma separated tags here"
+                   onkeypress="saveTags(event)">
+            <span id="tags_text" class="form-control"
+                  onclick="toggleTags(); $(this).parent().find('#tags_input').focus();"></span>
+        </div>
+    </div>
+    <div>
+        <table id="questions_table" class="table-striped">
+            <tbody/>
+        </table>
+    </div>
+    <div id="jumbotron" class="jumbotron">
+        <h1>Enter tags to start</h1>
+    </div>
+</div>
+</body>
+</html>
