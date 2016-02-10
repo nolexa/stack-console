@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - "0.10"
+  - "stable"
 before_script:
   - npm install -g nw
   - npm install -g nw-builder@2.1.0
@@ -9,6 +9,8 @@ before_deploy:
   - cd build
   - zip -r so-console-win32.zip so-console/win32/*
   - zip -r so-console-win64.zip so-console/win64/*
+  - ls -l
+  - cd ..
 deploy:
   provider: releases
   api_key: "$GITHUB_PUB_TOKEN"
