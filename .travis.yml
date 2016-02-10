@@ -3,20 +3,29 @@ node_js:
   - "stable"
 before_script:
   - npm install -g nw
+  # Latest version of nw-builder is broken
   - npm install -g nw-builder@2.1.0
 before_deploy:
-  - nwbuild -v 0.12.3 -p win32,win64 .
+  - nwbuild -v 0.12.3 -p win32,win64,osx32,osx64,linux32,linux64 .
   - cd build
   - zip -r so-console-win32.zip so-console/win32/*
   - zip -r so-console-win64.zip so-console/win64/*
+  - zip -r so-console-osx32.zip so-console/osx32/*
+  - zip -r so-console-osx64.zip so-console/osx64/*
+  - zip -r so-console-linux32.zip so-console/linux32/*
+  - zip -r so-console-linux64.zip so-console/linux64/*
   - ls -l
   - cd ..
+  - pwd
 deploy:
   provider: releases
   api_key: "$GITHUB_PUB_TOKEN"
   file:
     - "build/so-console-win32.zip"
     - "build/so-console-win64.zip"
+    - "build/so-console-osx32.zip"
+    - "build/so-console-linux32.zip"
+    - "build/so-console-linux64.zip"
   skip_cleanup: true
   on:
     tags: true
