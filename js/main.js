@@ -12,9 +12,12 @@
 window.jQuery = $ = require("jquery");
 
 var stackOverflowRss = require('stack-overflow-rss');
-var gui = require("nw.gui");
+var gui = global.gui = require("nw.gui");
 var soConsumer = createStackoverflowConsumer();
 var notifier = require('nw-notify');
+
+var menu = require("./js/menu.js");
+menu.initMenu();
 
 notifier.setConfig({
     width: 350,
@@ -45,7 +48,7 @@ notifier.setConfig({
     }
 });
 
-function updateQuestions (questions) {
+function updateQuestions(questions) {
     //console.log("Updating " + questions.length + " questions");
     $('#questions_table').find('tbody').empty();
     $(function () {
@@ -97,12 +100,12 @@ function toggleTags() {
     $('#tags_text').toggle();
 }
 
-function saveTags(e){
-    if(e.keyCode == 13){
+function saveTags(e) {
+    if (e.keyCode == 13) {
         localStorage.so_tags = e.target.value;
         $('#tags_text').text(localStorage.so_tags);
         toggleShowHide();
-        if(soConsumer) {
+        if (soConsumer) {
             soConsumer.stop();
             notifier.closeAll();
         }

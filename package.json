@@ -1,6 +1,13 @@
 {
   "name": "so-console",
   "version": "0.0.1",
+  "description": "Desktop application for tracking Stackoverflow questions by tags",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nolexa/so-console"
+  },
+  "homepage": "http://nolexa.github.io/so-console",
   "main": "index.html",
   "chromium-args": "--enable-transparent-visuals --disable-gpu",
   "author": {
@@ -9,7 +16,7 @@
     "url": "http://www.dzhaworks.com/"
   },
   "window": {
-    "toolbar": true,
+    "toolbar": false,
     "show": true,
     "position": "center",
     "width": 800,
@@ -17,7 +24,8 @@
   },
   "scripts": {
     "start": "nw .",
-    "lint": "jshint *.js"
+    "build": "node build.js",
+    "prestart": "npm run build"
   },
   "dependencies": {
     "jquery": "^2.2.0",
@@ -26,6 +34,6 @@
     "stack-overflow-rss": "^0.3.0"
   },
   "devDependencies": {
-    "jshint": "^2.9.1"
+    "copyfiles": "^0.2.1"
   }
 }
