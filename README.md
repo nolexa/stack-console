@@ -1,4 +1,6 @@
-# stackoverflow-console
+# so-console
+
+[![Build Status](https://travis-ci.org/nolexa/so-console.svg?branch=master)](https://travis-ci.org/nolexa/so-console)
 
 Desktop application for tracking Stackoverflow questions by tags
 
