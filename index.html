@@ -16,7 +16,7 @@
     <header>
       <div class="container">
         <h1>SO-console</h1>
-        <h2>Desktop application for tracking Stackoverflow questions by tags</h2>
+        <h2>Stackoverflow questions tracker</h2>
 
         <section id="downloads">
           <a href="https://github.com/nolexa/so-console/zipball/master" class="btn">Download as .zip</a>
@@ -29,12 +29,61 @@
     <div class="container">
       <section id="main_content">
         <h1>
-<a id="stackoverflow-console" class="anchor" href="#stackoverflow-console" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>stackoverflow-console</h1>
+<a id="stackoverflow-questions-tracker" class="anchor" href="#stackoverflow-questions-tracker" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a href="http://stackoverflow.com">Stackoverflow</a> questions tracker</h1>
 
-<p>Desktop application for tracking Stackoverflow questions by tags</p>
+<p><a href="https://travis-ci.org/nolexa/so-console"><img src="https://travis-ci.org/nolexa/so-console.svg?branch=master" alt="Build Status"></a></p>
+
+<p><strong>SO-console</strong> is a desktop application for tracking newest <a href="http://stackoverflow.com">Stackoverflow</a> questions by tags.
+It is written in JavaScript, built with <a href="http://nwjs.io">NW.js</a> desktop toolkit,
+and is run with <a href="http://nodejs.org">node.js</a> runtime.</p>
 
 <h3>
-<a id="install-nwjs" class="anchor" href="#install-nwjs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Install NW.js</h3>
+<a id="features" class="anchor" href="#features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h3>
+
+<ul>
+<li>Runs on Windows, MacOS, Linux</li>
+<li>Shows latest questions for selected tags</li>
+<li>Refreshes the list automatically</li>
+<li>Shows screen notifications for new questions</li>
+<li>Opens a detailed question page in a browser</li>
+</ul>
+
+<h3>
+<a id="how-to-use" class="anchor" href="#how-to-use" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to use</h3>
+
+<ul>
+<li>Install and run the application as described below.</li>
+<li>Enter a comma separated list of tags to follow. Press <code>Enter</code>.</li>
+<li>Click the question titles to get them in a browser.</li>
+<li>Click the tags list at the top of the screen to edit the tags.</li>
+</ul>
+
+<h2>
+<a id="downloads" class="anchor" href="#downloads" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Downloads</h2>
+
+<p>Download binaries for your platform from the <a href="https://github.com/nolexa/so-console/releases/latest">latest release</a>.</p>
+
+<p>Unzip the archive and run <code>so-console.exe</code> on <code>Windows</code>, or <code>so-console</code> on other platforms.</p>
+
+<h2>
+<a id="building-from-source-code" class="anchor" href="#building-from-source-code" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Building from source code</h2>
+
+<h3>
+<a id="install-nodejs-and-npm" class="anchor" href="#install-nodejs-and-npm" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Install Node.js and NPM</h3>
+
+<p>Follow the installation guidelines at <a href="http://nodejs.org">nodejs.org</a></p>
+
+<h3>
+<a id="get-the-sources" class="anchor" href="#get-the-sources" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Get the sources</h3>
+
+<p>Download the <a href="http://github.com/nolexa/so-console/archive/master.zip">project's archive</a>,
+or clone it with git <code>git clone https://github.com/nolexa/so-console.git</code>.  </p>
+
+<h3>
+<a id="install-nwjs" class="anchor" href="#install-nwjs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Install <a href="http://nwjs.io">NW.js</a>
+</h3>
+
+<p>Step into the project's directory and run</p>
 
 <pre><code>npm install -g nw
 </code></pre>
@@ -46,10 +95,15 @@
 </code></pre>
 
 <h3>
-<a id="run" class="anchor" href="#run" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Run</h3>
+<a id="run-the-application" class="anchor" href="#run-the-application" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Run the application</h3>
 
 <pre><code>npm start
 </code></pre>
+
+<h2>
+<a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contributing</h2>
+
+<p>Just fork it and start hacking. Every help is welcome. Check the list of issues for the backlog. </p>
       </section>
     </div>
 
