@@ -20,7 +20,8 @@
     "show": true,
     "position": "center",
     "width": 800,
-    "height": 1000
+    "height": 1000,
+    "icon": "images/so-icon.png"
   },
   "scripts": {
     "pretest": "npm run build",

@@ -24,6 +24,7 @@ deploy:
     - "build/so-console-win32.zip"
     - "build/so-console-win64.zip"
     - "build/so-console-osx32.zip"
+    - "build/so-console-osx64.zip"
     - "build/so-console-linux32.zip"
     - "build/so-console-linux64.zip"
   skip_cleanup: true
