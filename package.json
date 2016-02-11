@@ -1,6 +1,6 @@
 {
   "name": "so-console",
-  "version": "0.0.1",
+  "version": "0.1.1",
   "description": "Desktop application for tracking Stackoverflow questions by tags",
   "license": "MIT",
   "repository": {
@@ -23,6 +23,7 @@
     "height": 1000
   },
   "scripts": {
+    "pretest": "npm run build",
     "start": "nw .",
     "build": "node build.js",
     "prestart": "npm run build"
