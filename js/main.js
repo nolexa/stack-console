@@ -15,6 +15,7 @@ var stackOverflowRss = require('stack-overflow-rss');
 var gui = global.gui = require("nw.gui");
 var soConsumer = createStackoverflowConsumer();
 var notifier = require('nw-notify');
+var firstUpdate = true;
 
 var menu = require("./js/menu.js");
 menu.initMenu();
@@ -49,7 +50,6 @@ notifier.setConfig({
 });
 
 function updateQuestions(questions) {
-    //console.log("Updating " + questions.length + " questions");
     $('#questions_table').find('tbody').empty();
     $(function () {
         $.each(questions, function (i, item) {
@@ -62,7 +62,10 @@ function updateQuestions(questions) {
 }
 
 function newQuestions(questions) {
-    //console.log("Got " + questions.length + " new questions");
+    if(firstUpdate) {
+        firstUpdate = false;
+        return;
+    }
     questions.forEach(function (item) {
         showNotification(item.tags.join(", "), item.title, function () {
             gui.Shell.openExternal(item.id);
@@ -124,6 +127,7 @@ function createStackoverflowConsumer() {
         });
         newConsumer.on('update', updateQuestions);
         newConsumer.on('new', newQuestions);
+        firstUpdate = true;
         newConsumer.update();
         return newConsumer;
     }
