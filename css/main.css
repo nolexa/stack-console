@@ -22,3 +22,10 @@
 #jumbotron {
     text-align: center
 }
+
+.new-q:nth-of-type(even) {
+    background-color: #d5ffc2 !important;
+}
+.new-q:nth-of-type(odd) {
+    background-color: #b0ffa7 !important;
+}

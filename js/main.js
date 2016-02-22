@@ -45,15 +45,22 @@ notifier.setConfig({
         show: false,
         frame: false,
         transparent: true,
-        toolbar: false
+        focus: false,
+        toolbar: false,
+        title: "stack-console",
+        "icon": "images/so-icon.png"
     }
 });
+
+var newQuestionsIds = [];
 
 function updateQuestions(questions) {
     $('#questions_table').find('tbody').empty();
     $(function () {
         $.each(questions, function (i, item) {
-            $('<tr>').append(
+            $('<tr>').attr("class", function() {
+                return (newQuestionsIds.indexOf(item.id) >= 0) ? "new-q" : "old-q";
+            }).append(
                 $('<td class="col-md-8">').append($('<a>').attr('href', item.id).text(item.title).click(openInBrowser)),
                 $('<td class="col-md-4">').append(item.tags.join(", "))
             ).appendTo('#questions_table tbody');
@@ -66,7 +73,9 @@ function newQuestions(questions) {
         firstUpdate = false;
         return;
     }
+    newQuestionsIds = [];
     questions.forEach(function (item) {
+        newQuestionsIds.push(item.id);
         showNotification(item.tags.join(", "), item.title, function () {
             gui.Shell.openExternal(item.id);
         });
