@@ -18,7 +18,7 @@
         <div id="tags_container">
             <input id="tags_input" type="text" class="form-control" placeholder="Type comma separated tags here"
                    onkeyup="processTags(event)">
-            <span id="tags_text" class="form-control"
+            <span id="tags_text" class="form-control" data-toggle="tooltip" title="Click to edit tags"
                   onclick="toggleTags(); $(this).parent().find('#tags_input').focus();"></span>
         </div>
     </div>
