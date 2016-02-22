@@ -112,7 +112,7 @@ function toggleTags() {
     $('#tags_text').toggle();
 }
 
-function saveTags(e) {
+function processTags(e) {
     if (e.keyCode == 13) {
         localStorage.so_tags = e.target.value;
         $('#tags_text').text(localStorage.so_tags);
@@ -122,6 +122,13 @@ function saveTags(e) {
             notifier.closeAll();
         }
         soConsumer = createStackoverflowConsumer();
+    } else if (e.keyCode == 27) {
+        // on Escape:
+        // reset the input to last stored value,
+        // toggle input/text
+        $('#tags_input')
+            .val(localStorage.so_tags);
+        toggleShowHide();
     }
     return false;
 }
