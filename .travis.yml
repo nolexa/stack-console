@@ -8,12 +8,12 @@ before_script:
 before_deploy:
   - nwbuild -v 0.12.3 -p win32,win64,osx32,osx64,linux32,linux64 .
   - cd build
-  - zip -r so-console-win32.zip so-console/win32/*
-  - zip -r so-console-win64.zip so-console/win64/*
-  - zip -r so-console-osx32.zip so-console/osx32/*
-  - zip -r so-console-osx64.zip so-console/osx64/*
-  - zip -r so-console-linux32.zip so-console/linux32/*
-  - zip -r so-console-linux64.zip so-console/linux64/*
+  - zip -r stack-console-win32.zip stack-console/win32/*
+  - zip -r stack-console-win64.zip stack-console/win64/*
+  - zip -r stack-console-osx32.zip stack-console/osx32/*
+  - zip -r stack-console-osx64.zip stack-console/osx64/*
+  - zip -r stack-console-linux32.zip stack-console/linux32/*
+  - zip -r stack-console-linux64.zip stack-console/linux64/*
   - ls -l
   - cd ..
   - pwd
@@ -21,12 +21,12 @@ deploy:
   provider: releases
   api_key: "$GITHUB_PUB_TOKEN"
   file:
-    - "build/so-console-win32.zip"
-    - "build/so-console-win64.zip"
-    - "build/so-console-osx32.zip"
-    - "build/so-console-osx64.zip"
-    - "build/so-console-linux32.zip"
-    - "build/so-console-linux64.zip"
+    - "build/stack-console-win32.zip"
+    - "build/stack-console-win64.zip"
+    - "build/stack-console-osx32.zip"
+    - "build/stack-console-osx64.zip"
+    - "build/stack-console-linux32.zip"
+    - "build/stack-console-linux64.zip"
   skip_cleanup: true
   on:
     tags: true
