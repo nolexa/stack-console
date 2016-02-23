@@ -7,18 +7,29 @@
  lazy - Defer polling until the first subscription to 'new'. Default is true. You can use consumer.update()to trigger a single update.
  */
 
-//localStorage.so_tags = "";
-
 window.jQuery = $ = require("jquery");
 
 var stackOverflowRss = require('stack-overflow-rss');
-var gui = global.gui = require("nw.gui");
+var gui = global.gui = require('nw.gui');
 var soConsumer = createStackoverflowConsumer();
 var notifier = require('nw-notify');
 var firstUpdate = true;
+var notificationsEnabled;
+if (localStorage.so_notifications) {
+    notificationsEnabled = eval(localStorage.so_notifications);
+}
 
 var menu = require("./js/menu.js");
-menu.initMenu();
+
+menu.initMenu({
+    'notificationsEnabled': notificationsEnabled,
+    'notificationSettingsListener': notificationSettingsListener
+});
+
+function notificationSettingsListener(enabled) {
+    notificationsEnabled = enabled;
+    localStorage.so_notifications = enabled;
+}
 
 notifier.setConfig({
     width: 350,
@@ -73,13 +84,19 @@ function newQuestions(questions) {
         firstUpdate = false;
         return;
     }
+
     newQuestionsIds = [];
     questions.forEach(function (item) {
         newQuestionsIds.push(item.id);
-        showNotification(item.tags.join(", "), item.title, function () {
-            gui.Shell.openExternal(item.id);
-        });
     });
+
+    if(notificationsEnabled) {
+        questions.forEach(function (item) {
+            showNotification(item.tags.join(", "), item.title, function () {
+                gui.Shell.openExternal(item.id);
+            });
+        });
+    }
 }
 
 function openInBrowser(event) {
