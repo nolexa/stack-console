@@ -1,13 +1,13 @@
 {
-  "name": "so-console",
-  "version": "0.1.1",
+  "name": "stack-console",
+  "version": "0.1.3",
   "description": "Desktop application for tracking Stackoverflow questions by tags",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nolexa/so-console"
+    "url": "https://github.com/nolexa/stack-console"
   },
-  "homepage": "http://nolexa.github.io/so-console",
+  "homepage": "http://nolexa.github.io/stack-console",
   "main": "index.html",
   "chromium-args": "--enable-transparent-visuals --disable-gpu",
   "author": {
